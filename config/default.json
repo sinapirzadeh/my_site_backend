@@ -1,0 +1,10 @@
+{
+  "name": "my_site_backend",
+  "db": {
+    "address": "mongodb://localhost:27017/mysite_db"
+  },
+  "server": {
+    "port": 3000
+  },
+  "jwt_key": "vq4Ke1BjOTjM2YctQIvCT7GFzHwmfZPGo5wnrgkid0YQtnAleFSqumZm4az3n2BS"
+}
