@@ -4,6 +4,7 @@ const debug = require("debug")("app:main");
 const cors = require("cors");
 const config = require("config");
 const rateLimit = require("express-rate-limit");
+const path = require("path");
 
 const app = require("express")();
 
@@ -15,7 +16,7 @@ const limiter = rateLimit({
   max: 100,
   message: "تعداد درخاست شما زیاد بوده پس یه 15 دقیقه صبر کن ممنون",
 });
-
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(limiter);
 
 app.use(cors());

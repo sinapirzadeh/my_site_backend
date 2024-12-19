@@ -14,7 +14,7 @@ module.exports = new (class extends controller {
 
   async setIsRead(req, res) {
     try {
-      let isRead = await this.Contact.findByIdAndDelete(
+      let isRead = await this.Contact.findByIdAndUpdate(
         req.params.id,
         { is_read: true },
         { new: true }

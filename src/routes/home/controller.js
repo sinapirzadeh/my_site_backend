@@ -18,6 +18,13 @@ module.exports = new (class extends controller {
     }
   }
 
+  async blog(req, res) {
+    try {
+    } catch (error) {
+      this.errResponse({ res, message: "مشکلی به وجود آمده" });
+    }
+  }
+
   async addContact(req, res) {
     try {
       let contactForm = await this.Contact.create(req.body);

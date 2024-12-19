@@ -5,10 +5,12 @@ const Proflie = require("../models/proflie.js");
 const Skill = require("../models/skill.js");
 const Contact = require("../models/contact.js");
 const Message = require("../models/message.js");
+const Article = require("../models/article.js");
 
 module.exports = class {
   constructor() {
     autoBind(this);
+    this.Article = Article;
     this.User = User;
     this.Proflie = Proflie;
     this.Skill = Skill;

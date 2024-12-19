@@ -7,22 +7,15 @@ router.get("/profile", controller.profile);
 
 router.get("/skills", controller.skills);
 
+router.get("/blog", controller.blog);
+
 router.post(
   "/add_contact",
   validator.contactValidator(),
   controller.validate,
   controller.addContact
-);   
-
-
-
-
-router.post(
-  "/add_comment",
-  validator.commentValidator(),
-  controller.validate,
-  controller.addComment
 );
+
 router.post(
   "/add_comment",
   validator.commentValidator(),
