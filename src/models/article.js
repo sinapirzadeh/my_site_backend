@@ -14,6 +14,8 @@ module.exports = mongoose.model(
       meta_description: { type: String, maxlength: 160 },
       meta_keywords: [String],
       is_delete: { type: Boolean, default: false },
+      short_url: String,
+      tags: [String],
     },
     {
       timestamps: true,

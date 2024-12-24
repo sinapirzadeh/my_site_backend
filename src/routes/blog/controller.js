@@ -35,11 +35,22 @@ module.exports = new (class extends controller {
   }
 
   async getArticle(req, res) {
-    console.log('1', 1, )
+    try {
+      let article = await this.Article.findOne({ slug: req.params.slug });
+      this.response({
+        res,
+        data: article,
+      });
+    } catch (error) {
+      this.errResponse({ res, message: "مشکلی به وجود آمده" });
+    }
+  }
+
+  async getArticleUrl(req, res) {
     try {
       this.response({
         res,
-        data: await this.Article.findOne({ slug: req.params.slug }),
+        data: await this.Article.findOne({ short_url: req.params.short_url }),
       });
     } catch (error) {
       this.errResponse({ res, message: "مشکلی به وجود آمده" });

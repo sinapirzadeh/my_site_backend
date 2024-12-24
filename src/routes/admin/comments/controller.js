@@ -29,10 +29,8 @@ module.exports = new (class extends controller {
   async delContact(req, res) {
     try {
       let { deletedCount } = await this.Contact.deleteOne({ _id: req.body.id });
-      console.log(deletedCount);
       if (deletedCount == 0)
         return this.response({ req, message: "تماس پیدا نشد!" });
-      console.log(deletedCount);
       this.response({ req, message: "پیام با موفقیت پاک شد" });
     } catch (error) {
       this.errResponse({ res, message: "مشکلی پیش آمد" });
