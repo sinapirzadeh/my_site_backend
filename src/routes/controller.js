@@ -6,6 +6,8 @@ const Skill = require("../models/skill.js");
 const Contact = require("../models/contact.js");
 const Message = require("../models/message.js");
 const Article = require("../models/article.js");
+const ArticleCommet = require("../models/comment.js");
+const Ips = require("../models/ips.js");
 
 module.exports = class {
   constructor() {
@@ -16,6 +18,8 @@ module.exports = class {
     this.Skill = Skill;
     this.Contact = Contact;
     this.Message = Message;
+    this.ArticleCommet = ArticleCommet;
+    this.Ips = Ips;
   }
 
   validationBody(req, res) {

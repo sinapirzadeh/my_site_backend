@@ -20,6 +20,10 @@ module.exports = new (class extends controller {
 
   async blog(req, res) {
     try {
+      let articles = await this.Article.find({ is_delete: false })
+        .limit(3)
+        .sort({ updatedAt: -1 });
+      this.response({ res, data: articles });
     } catch (error) {
       this.errResponse({ res, message: "مشکلی به وجود آمده" });
     }

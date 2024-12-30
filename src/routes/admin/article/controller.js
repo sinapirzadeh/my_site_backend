@@ -31,7 +31,6 @@ module.exports = new (class extends controller {
 
         await this.Article.create({
           ...req.body,
-          short_url: nanoid(6),
           image: imageUrl,
         });
 

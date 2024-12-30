@@ -16,6 +16,7 @@ const limiter = rateLimit({
   max: 100,
   message: "تعداد درخاست شما زیاد بوده پس یه 15 دقیقه صبر کن ممنون",
 });
+
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(limiter);
 
@@ -32,4 +33,4 @@ mongoose
 app.use("/api", router);
 
 const port = process.env.PORT || config.get("server.port");
-app.listen(port, () => console.log(`http://localhost:${port}`));
+app.listen(port, () => console.log(`http://localhost:${port}/api/`));

@@ -3,7 +3,8 @@
   "version": "2.0.0",
   "main": "server.js",
   "scripts": {
-    "run": "set DEBUG=my_site_backend:mina && nodemon index"
+    "run": "nodemon index",
+    "start": "set DEBUG=my_site_backend:mina && nodemon index"
   },
   "keywords": [],
   "author": "sina Pirzadeh yesss!!!!",

@@ -4,8 +4,8 @@ module.exports = mongoose.model(
   "Comment",
   new mongoose.Schema(
     {
-      name: { type: String, required: true },
-      message: { type: String, required: true },
+      name: { type: String, required: true, max: [50, "متن طولانی است"] },
+      message: { type: String, required: true, max: [700, "متن طولانی است"] },
       is_trusted: { type: Boolean, default: false },
       article: {
         type: mongoose.Schema.Types.ObjectId,
@@ -13,7 +13,6 @@ module.exports = mongoose.model(
         required: true,
       },
       is_delete: { type: Boolean, default: false },
-
     },
     {
       timestamps: true,
