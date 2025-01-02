@@ -5,21 +5,17 @@ const cors = require("cors");
 const config = require("config");
 const rateLimit = require("express-rate-limit");
 const path = require("path");
-
-const app = require("express")();
-
-app.use(cors());
 const router = require("./src/routes");
+
+const app = express()
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
   message: "تعداد درخاست شما زیاد بوده پس یه 15 دقیقه صبر کن ممنون",
 });
-
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 app.use(limiter);
-
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
